@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 export default class TodoBox extends React.Component {
     render() {
         return (
@@ -13,7 +13,7 @@ export default class TodoBox extends React.Component {
 class TodoList extends React.Component {
     render() {
         return (
-            <div class="todoList">
+            <div className="todoList">
                 I am a TodoList.
             </div>
         );
@@ -22,13 +22,13 @@ class TodoList extends React.Component {
 class TodoForm extends React.Component {
     render() {
         return (
-            <div class="todoForm">
+            <div className="todoForm">
                 I am a TodoForm.
             </div>
         );
     }
-}*/
-import React from 'react';
+}
+/*import React from 'react';
 
 export default class TodoBox extends React.Component{
     render() {
@@ -36,4 +36,4 @@ export default class TodoBox extends React.Component{
             Hello, world!
         </div>
     }
-}
+}*/
