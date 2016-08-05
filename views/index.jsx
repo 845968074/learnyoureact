@@ -1,5 +1,15 @@
 import React from 'react';
 
+class MyComponent extends React.Component {
+    /* ... */
+}
+MyComponent.propTypes = {
+    name:   React.PropTypes.string.isRequired,
+    id:     React.PropTypes.number.isRequired,
+    width:  React.PropTypes.number.isRequired,
+    height: React.PropTypes.number.isRequired,
+    alt:    React.PropTypes.string
+};
 export default class TodoBox extends React.Component {
     render() {
         return (
@@ -19,6 +29,7 @@ class TodoList extends React.Component {
                     <tbody>
                     <Todo title="Shopping">Milk</Todo>
                     <Todo title="Hair cut">13:00</Todo>
+                    <Todo title="Learn React">15:00</Todo>
                     </tbody>
                 </table>
             </div>
@@ -35,6 +46,9 @@ class Todo extends React.Component {
         )
     }
 }
+Todo.propTypes = {
+    title: React.PropTypes.number.isRequired
+};
 
 class TodoForm extends React.Component {
     render() {
@@ -45,6 +59,7 @@ class TodoForm extends React.Component {
         );
     }
 }
+
 
 //#test 2
 
