@@ -1,47 +1,45 @@
 import React from 'react';
-class MyComponent extends React.Component {
-}
-MyComponent.propTypes = {
-    name:   React.PropTypes.string.isRequired,
-    id:     React.PropTypes.number.isRequired,
-    width:  React.PropTypes.number.isRequired,
-    height: React.PropTypes.number.isRequired,
-    alt:    React.PropTypes.string
-};
+
 export default class TodoBox extends React.Component {
     render() {
         return (
             <div className="todoBox">
                 <h1>Todos</h1>
-                <TodoList />
+                <TodoList data={this.props.data}/>
                 <TodoForm />
             </div>
         );
     }
 }
+
 class TodoList extends React.Component {
     render() {
+        var todo = this.props.data.map(function (obj) {
+            return <Todo title={obj.title} key={obj.title}>{obj.detail}</Todo>
+        });
         return (
             <div className="todoList">
                 <table style={{border: "2px solid black"}}>
                     <tbody>
-                    <Todo title="Shopping">Milk</Todo>
-                    <Todo title="Hair cut">13:00</Todo>
-                    <Todo title="Learn React">15:00</Todo>
+                    {todo}
                     </tbody>
                 </table>
             </div>
         );
     }
 }
+
+
 class Todo extends React.Component {
     constructor(props) {
         super(props);
-     this.state={checked:false};
+        this.state = {checked: false};
     }
-    handleChange(e){
-        this.setState({checked:e.target.checked});
+
+    handleChange(e) {
+        this.setState({checked: e.target.checked});
     }
+
     render() {
         return (
             <tr>
@@ -62,7 +60,7 @@ class TodoForm extends React.Component {
                 I am a TodoForm.
             </div>
         );
-}
+    }
 }
 let style = {
     tableContent: {
